@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { AntivirusComponent } from './antivus/antivirus.component';
 
 import { AppComponent } from './app.component';
+import { RouteAntivirusService } from './service/route-antivirus.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AntivirusComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [RouteAntivirusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

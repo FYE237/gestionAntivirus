@@ -1,0 +1,116 @@
+<img src="/assets/image/head.png" style="margin-left: 30%; margin-top: 3%;" />
+<div class="card" style="text-align: center; margin-left: 10%; margin-right: 15%;">
+  <div class="card-header text-white bg-info" >
+       Les caractéristiques de mon Antivirus
+  </div>
+  <div class="card-body">
+    <form novalidate (ngSubmit)="rechercheCaracteristiqueAntivirus()" [formGroup]="antivirusForm">
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label " for="antivirusNameId">
+          Nom de l'antivirus :
+        </label>
+        <div class="col-md-8">
+          <input
+             id="antivirusNameId"
+             type="text"
+             class="form-control"
+             formControlName = "antivirusName"
+             placeholder="Nom de l'antivirus obligatoire"
+             required
+          >
+        </div>
+      </div>
+      <div class="form-group row mb-2" style="margin-top: 30px; ">
+        <label class="col-md-2 col-form-label " for="antivirusVersionId">
+          Version de l'antivirus :
+        </label>
+        <div class="col-md-8">
+          <input
+              id="antivirusVersionId"
+              type="text"
+              class="form-control"
+              formControlName ="antivirusVersion"
+              placeholder="la version ou l'année de l'antivirus obligatoire"
+              required
+            >
+        </div>
+      </div>
+
+
+      <div class="form-group row mb-2">
+        <div class="text-right" style=" text-align: center;" >
+          <button class="btn btn-info mr-3 " type="submit" style=" margin-right: 100px; margin-top: 20px;" (click)="afficherCaracteristiqueAntivirus()">
+            Rechercher
+          </button>
+          <button class="btn btn-outline-secondary mr-3" type="button" style=" margin-top: 20px; margin-right: 100px;" (click)="resetPage()">
+            Réinitialiser
+          </button>
+          <button class="btn btn-outline-secondary mr-3" type="button" style=" margin-top: 20px;" (click)="listeAntivirus()">
+            Liste Antivirus
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="card" style="margin-left: 10%; margin-right: 15%; margin-top: 50px;">
+  <div style=" margin: 20px;" >
+    <span *ngIf="indice == 0" style="display: block;">
+    </span>
+    <span *ngIf="indice == 3" style="display: block;">
+      <div style="text-align: center; font-size: 25px; font-weight: bold; color: red;">
+        Aucune caracteristique de la version {{caracteristique.version}} de  l'antivirus {{caracteristique.nomAntivirus}}
+    </div>
+    </span>
+    <span *ngIf="indice == 1" style="display: block;">
+      <div style="text-align: center; font-size: 25px; font-weight: bold; color:blue; text-decoration: underline;">
+        La liste des antivirus repertorier:
+    </div>
+    <ul style="margin-left: 25px; margin-top: 20px; font-size: 20px; text-align: left;">
+      <li *ngFor="let item of s">
+        {{item.nom}}
+      </li>
+    </ul>
+    </span>
+    <span *ngIf="indice == 2">
+      <div style="text-align: center;">
+        <span style=" font-weight: bold; text-align: center; font-size: 25px; ">Caractéristiques de l'antivirus : </span><span style="font-size: 30px; font-weight: bold; text-align: center; color: green;">{{caracteristique.nomAntivirus}}</span>
+        <div>
+          <img src="{{caracteristique.Imageurl}}" width="300px" height="300px"/>
+        </div>
+        <ul style="margin-left: 25px; margin-top: 25px; font-size: 25px; text-align: left;">
+          <li style="margin-left: 25px; margin-top: 25px;"><span style="text-decoration: underline; font-weight: bold; margin-right: 10px; "> Version :</span> <span> {{caracteristique.version}}</span></li>
+          <li style="margin-left: 25px; margin-top: 25px;"><span style="text-decoration: underline; font-weight: bold; margin-right: 10px; "> Point fort:</span>  <span>{{caracteristique1.pointsforts}}</span>
+          <script>
+                document.writeln("bonjour");
+                var arr2 = caracteristique1.pointsforts.split(";");
+                for(let i=0; i<arr1.lengt; i++){
+                  document.writeln("*" + arr2[i] + "<br>");
+                }
+
+            </script>
+          </li>
+          <li style="margin-left: 25px; margin-top: 25px;"><span style="text-decoration: underline; font-weight: bold; margin-right: 10px; "> Vulnérabilités:</span><span>{{caracteristique1.vulnerabilites}}</span>
+           <script>
+                var arr1 = caracteristique1.vulnerabilites.split(";");
+                for(let i=0; i<arr1.lengt; i++){
+                  document.writeln("*" + arr1[i] + "<br>");
+                }
+            </script>
+          </li>
+          <!--<li style="margin-left: 25px; margin-top: 25px;"><span style="text-decoration: underline; font-weight: bold; margin-right: 10px; "> Vulnérabilités:</span> <span>{{caracteristique1.attaques}}</span>-->
+            <!-- <script>
+                var arr2 = caracteristique1.pointsforts.split(';');
+                for(let i=0; i<arr1.lengt)
+                  document.writeln("*" + arr1[i]);
+            </script>-->
+
+        </ul>
+
+    </div>
+    </span>
+
+  </div>
+
+</div>
+<img src="/assets/image/food.png" style="margin-left: 10%; margin-bottom: 3%;" width="75%" />
