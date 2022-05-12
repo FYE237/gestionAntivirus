@@ -11,7 +11,7 @@ export class RouteAntivirusService {
   public carac!: caracteristique[];
   caractSubject = new Subject<caracteristique[]>()
   // public caracter!: caracter;
-  public apiUrl = 'http://172.20.10.4:3000/api/antivirus';
+  public apiUrl = 'http://192.168.43.229:3000/api/antivirus';
   caracModel!: caracteristique;
   constructor() { }
 
