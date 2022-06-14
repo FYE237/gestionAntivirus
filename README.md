@@ -1,5 +1,5 @@
 # gestionAntivirus
-programme qui fournir les caractéristique d'un antivirus en fonction de son nom et de sa version
+programme qui fournit les caractéristique d'un antivirus en fonction de son nom et de sa version
 
 
 # Technologie utilisée
